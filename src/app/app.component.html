@@ -1,0 +1,57 @@
+<div id="div_Conatiner">
+
+  <p>
+    <mat-toolbar color="primary">
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+
+      <span>E-Commerce</span>
+      <span class="example-spacer"></span>
+
+
+      <a *ngIf="isAuthenticated" mat-raised-button matTooltip="Info about the action"
+        aria-label="Button that displays a tooltip when focused or hovered over">
+      Welcome ♥ {{userName}}
+      </a>
+
+
+      <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+
+        <button mat-button routerLink="/Login" *ngIf="! isAuthenticated">
+          <mat-icon>power_settings_new</mat-icon>
+          Login
+        </button>
+
+        <a mat-button routerLink="/Regester" *ngIf="!isAuthenticated">
+          <mat-icon>power_settings_new</mat-icon>
+          Register
+        </a>
+
+        <a mat-button routerLink="/Product" *ngIf="isAuthenticated">
+          <mat-icon>Product</mat-icon>
+          Product
+        </a>
+        <a mat-button routerLink="/Home" *ngIf="isAuthenticated">
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+          Home
+        </a>
+
+        <button mat-button *ngIf="isAuthenticated" (click)="logout()">
+          <mat-icon>exit_to_app</mat-icon>
+          Logout
+        </button>
+
+
+      </div>
+    </mat-toolbar>
+  </p>
+</div>
+
+
+
+
+<div class="container responsive-grid">
+  <router-outlet></router-outlet>
+</div>

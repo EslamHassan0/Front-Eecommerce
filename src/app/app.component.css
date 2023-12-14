@@ -1,0 +1,41 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+ 
+
+
+  .container {
+    /* background-image: url(../assets/img/light-patten.svg); */
+    background-size: cover;
+    background-attachment: fixed;
+     
+ 
+   
+
+ 
+    background-repeat: repeat;
+  }
+  
+
+  @media screen and (max-width: 768px) {
+    .container {
+      /* background-image: url('../assets/img/light-patten.svg'); */
+      
+    }
+    
+  }
+   .containe{
+
+    @media (min-width: 600px) {
+      
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+  .containe {
+    @media (min-width: 600px) {
+  
+    }
+  }
+  

@@ -1,0 +1,62 @@
+<div id="test" >
+    <div fxLayout='row' fxLayoutGap="16px grid" fxLayout="row wrap"    fxLayoutWrap class="cards">
+
+
+        <div fxFlex="20"  class="example-card" *ngFor="let Product of Products">
+
+            <mat-card  class="example-card">
+
+
+                <mat-card-header>
+
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; ">
+
+                        <mat-card-title style="font-size: 20px;">{{Product.name}}</mat-card-title>
+                        <mat-chip>
+                            {{ Product.discountRate }}% Off
+                        </mat-chip>
+
+                    </div>
+                </mat-card-header>
+
+                <mat-card-header>
+
+                    <mat-card-subtitle>
+                        <mat-chip>
+                            {{Product.category}}
+                             
+                           
+                        </mat-chip>
+                    </mat-card-subtitle>
+                    <mat-card-title>Price: {{Product.price}}
+                    </mat-card-title>
+                </mat-card-header>
+                
+
+                   
+                <div  id="imgConter">
+
+                    <img media='(min-width:0px)'  mat-card-image  src="{{Path}}/{{Product.image}}"   alt="Card image cap">  
+                </div>
+                
+                
+                <mat-card-content>
+                    <!-- <p mat-button>Code:<strong>{{Product.productCode}}</strong></p> -->
+                    <p>{{ longText | slice: 0: 50 }}...</p>
+                    <!-- <p>discount:{{ Product.discountRate }}%</p> -->
+                    <mat-divider></mat-divider>
+                </mat-card-content>
+                <mat-card-actions>
+
+                    <button mat-button  color="primary">Buy now</button>
+                    <button mat-button disabled>minimum Quantity:{{Product.minimumQuantity}}</button>
+                    <button mat-button disabled>Code:{{Product.productCode}}</button>
+                </mat-card-actions>
+                
+
+            </mat-card>
+            <br>
+        </div>
+    </div>
+</div>
